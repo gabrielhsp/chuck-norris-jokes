@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  JokesCategoryViewController.swift
 //  ChuckNorrisJokes
 //
 //  Created by Gabriel Henrique on 22/08/19.
@@ -8,13 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class JokesCategoryViewController: UIViewController {
+    static let sceneIdentifier = "Categories"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
-
