@@ -15,6 +15,7 @@
 		0B7BF778230EC14800D014B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B7BF776230EC14800D014B7 /* LaunchScreen.storyboard */; };
 		0B7BF780230EC1E000D014B7 /* JokesCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7BF77F230EC1E000D014B7 /* JokesCategoryViewController.swift */; };
 		0B7BF788230EE5C400D014B7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7BF787230EE5C400D014B7 /* Constants.swift */; };
+		0BF18309231425AA00E9126C /* UIViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF18308231425AA00E9126C /* UIViewController+Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		0B7BF779230EC14800D014B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B7BF77F230EC1E000D014B7 /* JokesCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesCategoryViewController.swift; sourceTree = "<group>"; };
 		0B7BF787230EE5C400D014B7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0BF18308231425AA00E9126C /* UIViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Layout.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				0B0B50792310800C0081CEE8 /* UITableView+Layout.swift */,
+				0BF18308231425AA00E9126C /* UIViewController+Layout.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				0B7BF76E230EC14700D014B7 /* AppDelegate.swift in Sources */,
 				0B0B507C231080780081CEE8 /* JokesCategoriesList.swift in Sources */,
 				0B7BF780230EC1E000D014B7 /* JokesCategoryViewController.swift in Sources */,
+				0BF18309231425AA00E9126C /* UIViewController+Layout.swift in Sources */,
 				0B7BF788230EE5C400D014B7 /* Constants.swift in Sources */,
 				0B0B507A2310800C0081CEE8 /* UITableView+Layout.swift in Sources */,
 				0B0B5080231081670081CEE8 /* ViewCode.swift in Sources */,

@@ -11,7 +11,18 @@ import UIKit
 class JokesCategoryViewController: UIViewController {
     static let sceneIdentifier = "Categories"
     
+    override func loadView() {
+        view = JokesCategoriesList(delegate: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationBarLayout(withTitle: JokesCategoryViewController.sceneIdentifier)
+    }
+}
+
+extension JokesCategoryViewController: JokesCategoriesListDelegate {
+    func userSelectedItem(withCategory category: String) {
+        print("selectedCategory", category)
     }
 }
