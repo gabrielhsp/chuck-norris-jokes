@@ -19,6 +19,7 @@
 		0BF1830E231465D500E9126C /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF1830D231465D500E9126C /* Joke.swift */; };
 		0BF183102314680400E9126C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF1830F2314680400E9126C /* API.swift */; };
 		0BF5E20B2315EA650020E766 /* UITableViewCell+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5E20A2315EA650020E766 /* UITableViewCell+Layout.swift */; };
+		0BF5E20D2315F7430020E766 /* JokeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5E20C2315F7430020E766 /* JokeDetailViewController.swift */; };
 		6E7AAAEC4C54F7795631A448 /* Pods_ChuckNorrisJokes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCBD43EF0EB0B9D73CF336C8 /* Pods_ChuckNorrisJokes.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		0BF1830D231465D500E9126C /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Joke.swift; path = ChuckNorrisJokes/Classes/Extensions/Joke.swift; sourceTree = SOURCE_ROOT; };
 		0BF1830F2314680400E9126C /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		0BF5E20A2315EA650020E766 /* UITableViewCell+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Layout.swift"; sourceTree = "<group>"; };
+		0BF5E20C2315F7430020E766 /* JokeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeDetailViewController.swift; sourceTree = "<group>"; };
 		B956BC3983003C09239CA456 /* Pods-ChuckNorrisJokes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuckNorrisJokes.debug.xcconfig"; path = "Target Support Files/Pods-ChuckNorrisJokes/Pods-ChuckNorrisJokes.debug.xcconfig"; sourceTree = "<group>"; };
 		C73238B986EF68303937CD50 /* Pods-ChuckNorrisJokes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuckNorrisJokes.release.xcconfig"; path = "Target Support Files/Pods-ChuckNorrisJokes/Pods-ChuckNorrisJokes.release.xcconfig"; sourceTree = "<group>"; };
 		FCBD43EF0EB0B9D73CF336C8 /* Pods_ChuckNorrisJokes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChuckNorrisJokes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				0B7BF77F230EC1E000D014B7 /* JokesCategoryViewController.swift */,
+				0BF5E20C2315F7430020E766 /* JokeDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				0BF183102314680400E9126C /* API.swift in Sources */,
 				0BF1830E231465D500E9126C /* Joke.swift in Sources */,
 				0B7BF788230EE5C400D014B7 /* Constants.swift in Sources */,
+				0BF5E20D2315F7430020E766 /* JokeDetailViewController.swift in Sources */,
 				0B0B507A2310800C0081CEE8 /* UITableView+Layout.swift in Sources */,
 				0B0B5080231081670081CEE8 /* ViewCode.swift in Sources */,
 			);

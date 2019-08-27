@@ -18,13 +18,11 @@ class JokesCategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBarLayout(withTitle: JokesCategoryViewController.sceneIdentifier)
-        
-        
     }
 }
 
 extension JokesCategoryViewController: JokesCategoriesListDelegate {
     func userSelectedItem(withCategory category: String) {
-        print("selectedCategory", category)
+        navigationController?.pushViewController(JokeDetailViewController(selectedCategory: category), animated: true)
     }
 }
