@@ -44,6 +44,7 @@ class JokesCategoriesList: UIView {
     private lazy var jokesCategoriesTableView: UITableView = {
         let tableView = UITableView()
             tableView.translatesAutoresizingMaskIntoConstraints = false
+            tableView.separatorColor = .clear
             tableView.removeSpacing()
         
         return tableView
@@ -89,14 +90,15 @@ extension JokesCategoriesList: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: JokesCategoriesList.cellIdentifier, for: indexPath)
+        let cellData = categories[indexPath.row]
         
-        cell.accessoryType = .disclosureIndicator
-        cell.textLabel?.text = categories[indexPath.row]
+        cell.setupLayout(borderWidth: 0.5, borderColor: UIColor(white: 0.1, alpha: 0.1).cgColor, usingIndicator: .disclosureIndicator)
+        cell.textLabel?.text = cellData.capitalized
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.userSelectedItem(withCategory: "")
+        delegate?.userSelectedItem(withCategory: categories[indexPath.row])
     }
 }
