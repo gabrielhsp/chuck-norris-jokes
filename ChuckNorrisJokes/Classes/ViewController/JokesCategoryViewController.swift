@@ -18,6 +18,8 @@ class JokesCategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBarLayout(withTitle: JokesCategoryViewController.sceneIdentifier)
+        
+        
     }
 }
 

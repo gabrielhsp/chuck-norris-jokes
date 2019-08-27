@@ -13,22 +13,22 @@ final class API {
     static let categoriesEndpoint = "https://api.chucknorris.io/jokes/categories"
     static let jokeDetailEndpoint = "https://api.chucknorris.io/jokes/random?category="
     
-    class func requestCategories(responseRequest: @escaping(([JokeCategory]) -> Void)) {
+    class func requestCategories(responseRequest: @escaping(([String]) -> Void)) {
         Alamofire.request(API.categoriesEndpoint).responseJSON { response in
             switch response.result {
                 case .success(_):
                     guard let data = response.data else { return }
                     
                     do {
-                        let response = try JSONDecoder().decode([JokeCategory].self, from: data)
+                        let response = try JSONDecoder().decode([String].self, from: data)
                         
                         responseRequest(response)
                     } catch (let error) {
-                        print(error)
+                        print("error", error)
                     }
                 
                 case .failure(let error):
-                    print(error)
+                    print("failure error", error)
             }
         }
     }
@@ -44,11 +44,11 @@ final class API {
                         
                         responseRequest(response)
                     } catch (let error) {
-                        print(error)
+                        print("error", error)
                     }
                 
                 case .failure(let error):
-                    print(error)
+                    print("failure error", error)
             }
         }
     }

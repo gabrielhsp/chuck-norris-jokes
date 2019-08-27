@@ -17,16 +17,28 @@ class JokesCategoriesList: UIView {
     static let cellIdentifier = "cell"
     
     weak var delegate: JokesCategoriesListDelegate?
+    var categories: [String] = []
     
     init(delegate: JokesCategoriesListDelegate) {
         self.delegate = delegate
         super.init(frame: .zero)
         setup()
         setupTableView()
+        fetchCategories()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func fetchCategories() {
+        API.requestCategories { categories in
+            self.categories = categories
+            
+            DispatchQueue.main.async {
+                self.jokesCategoriesTableView.reloadData()
+            }
+        }
     }
     
     private lazy var jokesCategoriesTableView: UITableView = {
@@ -68,7 +80,7 @@ extension JokesCategoriesList: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return categories.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -79,7 +91,7 @@ extension JokesCategoriesList: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: JokesCategoriesList.cellIdentifier, for: indexPath)
         
         cell.accessoryType = .disclosureIndicator
-        cell.textLabel?.text = "App Category"
+        cell.textLabel?.text = categories[indexPath.row]
         
         return cell
     }

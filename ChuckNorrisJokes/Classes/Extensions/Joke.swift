@@ -10,7 +10,7 @@ import Foundation
 
 struct Joke: Codable {
     var id: String?
-    var categories: [JokeCategory]?
+    var categories: [String]?
     var creationDate: String?
     var updateDate: String?
     var icon: String?
