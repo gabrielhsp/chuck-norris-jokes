@@ -20,13 +20,28 @@ class JokeDetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func loadView() {
+        super.loadView()
+        view = JokeDetail(delegate: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        setupLayout()
         title = selectedCategory.capitalized
         
         API.requestJoke(usingCategory: selectedCategory) { response in
             print("response", response)
         }
+    }
+    
+    private func setupLayout() {
+        view.backgroundColor = .white
+    }
+}
+
+extension JokeDetailViewController: JokeDetailDelegate {
+    func jokeHasBeenLoaded() {
+        print("Hi")
     }
 }

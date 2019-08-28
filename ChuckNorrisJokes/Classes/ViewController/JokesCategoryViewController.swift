@@ -12,6 +12,7 @@ class JokesCategoryViewController: UIViewController {
     static let sceneIdentifier = "Categories"
     
     override func loadView() {
+        super.loadView()
         view = JokesCategoriesList(delegate: self)
     }
     
