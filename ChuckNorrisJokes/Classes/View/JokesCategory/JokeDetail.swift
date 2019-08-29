@@ -42,6 +42,8 @@ class JokeDetail: UIView {
         let label = UILabel()
             label.translatesAutoresizingMaskIntoConstraints = false
             label.font = UIFont.systemFont(ofSize: 14)
+            label.text = "Creation Date: "
+            label.textAlignment = .center
             label.textColor = .gray
         
         return label
@@ -52,7 +54,9 @@ class JokeDetail: UIView {
             textView.translatesAutoresizingMaskIntoConstraints = false
             textView.isScrollEnabled = false
             textView.font = UIFont.systemFont(ofSize: 16)
+            textView.textAlignment = .center
             textView.textColor = .black
+            textView.text = "Description of the joke goes right here my friend with a lot of more text that you can even imagine in your life"
         
         return textView
     }()
@@ -73,8 +77,21 @@ extension JokeDetail: ViewCode {
     func setupConstraints() {
         NSLayoutConstraint.activate([
             imageViewJoke.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+            imageViewJoke.centerXAnchor.constraint(equalTo: centerXAnchor),
             imageViewJoke.heightAnchor.constraint(equalToConstant: 48),
             imageViewJoke.widthAnchor.constraint(equalToConstant: 48)
+        ])
+        
+        NSLayoutConstraint.activate([
+            labelCreationDate.topAnchor.constraint(equalTo: imageViewJoke.bottomAnchor, constant: 16),
+            labelCreationDate.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            labelCreationDate.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+        ])
+        
+        NSLayoutConstraint.activate([
+            textViewJokeDescription.topAnchor.constraint(equalTo: labelCreationDate.bottomAnchor, constant: 8),
+            textViewJokeDescription.leadingAnchor.constraint(equalTo: labelCreationDate.leadingAnchor),
+            textViewJokeDescription.trailingAnchor.constraint(equalTo: labelCreationDate.trailingAnchor)
         ])
     }
 }
