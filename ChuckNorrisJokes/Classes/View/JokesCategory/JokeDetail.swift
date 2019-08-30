@@ -38,16 +38,6 @@ class JokeDetail: UIView {
         return imageView
     }()
     
-    private lazy var labelCreationDate: UILabel = {
-        let label = UILabel()
-            label.translatesAutoresizingMaskIntoConstraints = false
-            label.font = UIFont.systemFont(ofSize: 14)
-            label.textAlignment = .center
-            label.textColor = .gray
-        
-        return label
-    }()
-    
     private lazy var textViewJokeDescription: UITextView = {
         let textView = UITextView()
             textView.translatesAutoresizingMaskIntoConstraints = false
@@ -71,7 +61,6 @@ class JokeDetail: UIView {
     
     private func renderData(withJokeViewModel viewModel: JokeViewModel) {
         imageViewJoke.sd_setImage(with: viewModel.icon)
-        labelCreationDate.text = viewModel.creationDate
         textViewJokeDescription.text = viewModel.description
     }
 }
@@ -84,7 +73,6 @@ extension JokeDetail: ViewCode {
     
     func setupComponents() {
         addSubview(imageViewJoke)
-        addSubview(labelCreationDate)
         addSubview(textViewJokeDescription)
     }
     
@@ -97,15 +85,9 @@ extension JokeDetail: ViewCode {
         ])
         
         NSLayoutConstraint.activate([
-            labelCreationDate.topAnchor.constraint(equalTo: imageViewJoke.bottomAnchor, constant: 16),
-            labelCreationDate.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            labelCreationDate.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
-        ])
-        
-        NSLayoutConstraint.activate([
-            textViewJokeDescription.topAnchor.constraint(equalTo: labelCreationDate.bottomAnchor, constant: 8),
-            textViewJokeDescription.leadingAnchor.constraint(equalTo: labelCreationDate.leadingAnchor),
-            textViewJokeDescription.trailingAnchor.constraint(equalTo: labelCreationDate.trailingAnchor)
+            textViewJokeDescription.topAnchor.constraint(equalTo: imageViewJoke.bottomAnchor, constant: 8),
+            textViewJokeDescription.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            textViewJokeDescription.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
         ])
     }
 }

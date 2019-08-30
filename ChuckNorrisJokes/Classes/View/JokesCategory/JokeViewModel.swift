@@ -15,16 +15,10 @@ final class JokeViewModel {
         self.joke = joke
     }
     
-    var creationDate: String {
-        guard let creationDate = joke.creationDate else { return String() }
-        
-        return creationDate
-    }
-    
     var icon: URL {
-        let url = URL(string: String())!
+        let url = URL(string: String())
         
-        guard let icon = joke.icon, let iconPath = URL(string: icon) else { return url }
+        guard let icon = joke.icon, let iconPath = URL(string: icon) else { return url! }
         
         return iconPath
     }

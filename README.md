@@ -6,7 +6,7 @@ The first screen list the categories of jokes available inside the API and the d
 ## Project Dependencies
 This project use `CocoaPods` as dependency manager, so you will need to install him.
 
-After installing `CocoaPods`, inside the project workspace folder, run the command: `pod install`.
+After installing, inside the project workspace folder, run the command: `pod install`.
 
 This command will install all the dependencies used inside the project.
 
