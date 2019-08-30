@@ -14,4 +14,24 @@ final class JokeViewModel {
     init(joke: Joke) {
         self.joke = joke
     }
+    
+    var creationDate: String {
+        guard let creationDate = joke.creationDate else { return String() }
+        
+        return creationDate
+    }
+    
+    var icon: URL {
+        let url = URL(string: String())!
+        
+        guard let icon = joke.icon, let iconPath = URL(string: icon) else { return url }
+        
+        return iconPath
+    }
+    
+    var description: String {
+        guard let description = joke.description else { return String() }
+        
+        return description
+    }
 }

@@ -22,20 +22,16 @@ class JokeDetailViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        view = JokeDetail(delegate: self)
+        view = JokeDetail(delegate: self, jokeCategory: selectedCategory)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
-        title = selectedCategory.capitalized
-        
-        API.requestJoke(usingCategory: selectedCategory) { response in
-            print("response", response)
-        }
     }
     
     private func setupLayout() {
+        title = selectedCategory.capitalized
         view.backgroundColor = .white
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 protocol JokeDetailDelegate: class {
     func jokeHasBeenLoaded()
@@ -14,13 +15,14 @@ protocol JokeDetailDelegate: class {
 
 class JokeDetail: UIView {
     weak var delegate: JokeDetailDelegate?
-//    var jokeViewModel: JokeViewModel
+    var jokeCategory: String
     
-    init(delegate: JokeDetailDelegate /*, jokeViewModel: JokeViewModel */) {
+    init(delegate: JokeDetailDelegate, jokeCategory: String) {
         self.delegate = delegate
-//        self.jokeViewModel = jokeViewModel
+        self.jokeCategory = jokeCategory
         super.init(frame: .zero)
         setup()
+        fetchDataOnComponents()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -32,8 +34,6 @@ class JokeDetail: UIView {
             imageView.translatesAutoresizingMaskIntoConstraints = false
             imageView.contentMode = .scaleAspectFit
             imageView.layer.cornerRadius = 12
-            imageView.layer.borderColor = UIColor.lightGray.cgColor
-            imageView.layer.borderWidth = 0.5
         
         return imageView
     }()
@@ -42,7 +42,6 @@ class JokeDetail: UIView {
         let label = UILabel()
             label.translatesAutoresizingMaskIntoConstraints = false
             label.font = UIFont.systemFont(ofSize: 14)
-            label.text = "Creation Date: "
             label.textAlignment = .center
             label.textColor = .gray
         
@@ -56,10 +55,25 @@ class JokeDetail: UIView {
             textView.font = UIFont.systemFont(ofSize: 16)
             textView.textAlignment = .center
             textView.textColor = .black
-            textView.text = "Description of the joke goes right here my friend with a lot of more text that you can even imagine in your life"
         
         return textView
     }()
+    
+    private func fetchDataOnComponents() {
+        API.requestJoke(usingCategory: jokeCategory) { joke in
+            let jokeParsed = JokeViewModel(joke: joke)
+            
+            DispatchQueue.main.async {
+                self.renderData(withJokeViewModel: jokeParsed)
+            }
+        }
+    }
+    
+    private func renderData(withJokeViewModel viewModel: JokeViewModel) {
+        imageViewJoke.sd_setImage(with: viewModel.icon)
+        labelCreationDate.text = viewModel.creationDate
+        textViewJokeDescription.text = viewModel.description
+    }
 }
 
 extension JokeDetail: ViewCode {
